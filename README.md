@@ -9,12 +9,12 @@ The program [serieViaUSB](https://github.com/jeromecollin/robot) must be install
 ## Usage
 A variety of commands are available to streamline usage, with all commands for app1 being interchangeable with app2.
 ### Install
-"Compiles the library and the project, then installs on the specified robot.
+Compiles the library and the project, then installs on the specified robot.
 ```bash
 ./project install app1
 ```
 ### Debug
-"Compiles the library and the project, then installs on the specified robot. Finally, it starts the serieViaUSB program to receive data from the robot.
+Compiles the library and the project, then installs on the specified robot. Finally, it starts the serieViaUSB program to receive data from the robot.
 ```bash
 ./project debug app1
 ```
