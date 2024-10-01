@@ -2,11 +2,11 @@
 * Group : 03
 * Team : 6076
 * Date : 2024-03-08
-
-* Name of file : Communication.h
+*
+* Name of file : Communication.cpp
 * Description : Enables the robot to transmit and receive data to and from the
-computer.
-* Material components used : Peripheral UART0. Jumper DbgEn.
+*               computer.
+* Material components used : Peripheral UART0 and Jumper DbgEn.
 * Pins in input : None.
 * Pins in output : PD1 (TXD0/transmitter 0 pin)
 */
@@ -15,6 +15,8 @@ computer.
 
 #include <avr/io.h>
 #include <stdlib.h>
+
+#define TRANSMIT_BYTE_DELAY_MS 5
 
 class Communication {
 public:

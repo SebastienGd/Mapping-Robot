@@ -2,20 +2,23 @@
 * Group : 03
 * Team : 6076
 * Date : 2024-04-17
-
-* Name of file : Display.h
-* Description : This file defines all functions of the Display class, allowing for the robot to edit and print the map.
-* This class uses the RS232 protocol to send all informations to a PC.
+*
+* Name of file : Display.cpp
+* Description : This file defines all functions of the Display class, allowing for 
+*               the robot to edit and print the map.
+*               This class uses the RS232 protocol to send all informations to a PC.
+* Material components used : None.
+* Pins in input : None.
+* Pins in output : None.
 */
 
 #pragma once
 
 #include "DisplayConstants.h"
 #include "Memoire_24.h"
-
-using namespace displayConstants;
-
 #include <avr/io.h>
+
+using namespace DisplayConstants;
 
 class Display {
 public:
@@ -34,7 +37,6 @@ public:
     void failSafeRobot();
 
     void printMap();
-    void testing();
 
     Line* getLines();
 
@@ -89,40 +91,6 @@ private:
         "╦",  // 26 A
         "╩",  // 27 B
     };
-
-    /*
-        // clang-format off
-
-        char tableMap[(MAP.HEIGHT * MAP.WIDTH) + 1] = // the + 1 is because of
-       the \0 added at the end
-         "bcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccd"
-         "eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae"
-         "eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae"
-         "eaaaaafggggggggggggggggggggggggghaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaajkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkklaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaaaaakkkkkknaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaaokkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpaaaaaaaae"
-         "eaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae"
-         "eaaaaaqgggggggggggggggggggggggggraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae"
-         "eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae"
-         "eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae"
-         "sccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccct";
-
-        // clang-format on
-    */
 
     const char* signatureMap = "Produit par: Steve\n";
 

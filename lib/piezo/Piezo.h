@@ -2,26 +2,29 @@
 * Group : 03
 * Team : 6076
 * Date : 2024-03-19
-
-* Name of file : piezo.h
+*
+* Name of file : Piezo.h
 * Description : This header file defines a class for utilizing any of the 3
-                available timers on the ATmega324PA microcontroller as an
-                Engine. It employs the phase-correct PWM mode and integrates
-                several methods implemented in the timer file. Additionally,
-                this class facilitates the configuration of the engine's duty
-                cycle and direction.
-* Material components used :
-* Pins in input :
-* Pins in output :
+*               available timers on the ATmega324PA microcontroller as an
+*               Engine. It employs the phase-correct PWM mode and integrates
+*               several methods implemented in the timer file. Additionally,
+*               this class facilitates the configuration of the engine's duty
+*               cycle and direction.
+* Material components used : Piezo.
+* Pins in input : None.
+* Pins in output : Any PWM pin.
 */
 
 #pragma once
 
 #include "Timer.h"
 #include "TimerPeripherals.h"
-
 #include <avr/io.h>
 #include <math.h>
+
+#define A4_FREQUENCY 440.0
+#define A4_MIDI_NOTE 69
+#define SEMITONES_PER_OCTAVE 12.0
 
 template<TimerNumber timerNumber>
 class Piezo {
@@ -43,7 +46,7 @@ public:
     }
 
     double noteToFrequency(uint8_t note) {
-        return (440 * pow(2, ((note - 69) / 12.0)));
+        return (A4_FREQUENCY * pow(2, ((note - A4_MIDI_NOTE) / SEMITONES_PER_OCTAVE)));
     }
 
     void playNote(uint8_t note) {

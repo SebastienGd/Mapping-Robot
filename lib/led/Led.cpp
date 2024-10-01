@@ -2,12 +2,12 @@
 * Group : 03
 * Team : 6076
 * Date : 2024-03-08
-
-* Name of file : Led.cpp
+*
+* Name of file : Led.h
 * Description : Various ways to use a LED on the motherboard.
-* Material components used : A LED on the motherboard.
+* Material components used : LED.
 * Pins in input : None.
-* Pins in output : Two, users choice.
+* Pins in output : Two pins, users choice.
 */
 
 #include "Led.h"

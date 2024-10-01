@@ -2,11 +2,11 @@
 * Group : 03
 * Team : 6076
 * Date : 2024-04-17
-
+*
 * Name of file : Drivetrain.cpp
 * Description : This file defines all functions of the Drivetrain class, that
-takes two engines and a line-maker in parameters to allow a robot
-* to move whilst following black lines.
+*               takes two engines and a line-maker in parameters to allow a robot
+*               to move whilst following black lines.
 * Material components used : Line-maker, both engines.
 * Pins in input : None.
 * Pins in output : Depends on Timer used (PWM pins), Ground PIN.

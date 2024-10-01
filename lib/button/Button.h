@@ -2,12 +2,12 @@
 * Group : 03
 * Team : 6076
 * Date : 2024-03-27
-
-* Name of file : Button.h
+*
+* Name of file : Button.cpp
 * Description : Manages the interruptions setup and/or debounce of a button.
-                Multiple interruption types are available
+*               Multiple interruption types are available
 * Material components used : A button
-* Pins in input : PD2 PD3 or PB2 depending on the selected interrupt
+* Pins in input : PD2, PD3 or PB2 depending on the selected interrupt
 * Pins in output : None.
 */
 

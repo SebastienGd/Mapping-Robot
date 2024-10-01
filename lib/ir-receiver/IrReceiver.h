@@ -2,13 +2,12 @@
 * Group : 03
 * Team : 6076
 * Date : 2024-04-17
-
+*
 * Name of file : IrReceiver.h
 * Description : IrReceiver is a class that is used to receive data of any type
                 using the SIRC protocol. The receiver requires a carrier
                 frequency of 38kHz. Error checking is implemented. An invalid
                 address or a message that could not be processed will be ignored.
-ignored.
 * Material components used : Infrared Receiver (PNA4601M).
 * Pins in input : Any pin can be used.
 * Pins in output : None.
@@ -26,6 +25,7 @@ ignored.
 #define ADDRESS_LENGHT 5
 #define TRANSMISSION_SIZE ADDRESS_LENGHT + BITS_IN_BYTE
 #define DEFAULT_ADDRESS 0b1'0100
+#define RECEIVER_DELAY_US 3
 
 #define PULSE_OFF_DURATION_US 600
 #define LOGICAL_0_ON_DURATION_US 600

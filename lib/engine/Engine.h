@@ -2,7 +2,7 @@
 * Group : 03
 * Team : 6076
 * Date : 2024-03-08
-
+*
 * Name of file : Engine.h
 * Description : This header file defines a class for utilizing any of the 3
                 available timers on the ATmega324PA microcontroller as an
@@ -10,17 +10,17 @@
                 several methods implemented in the timer file. Additionally,
                 this class facilitates the configuration of the engine's duty
                 cycle and direction.
-* Material components used :
-* Pins in input :
-* Pins in output :
+* Material components used : Engine.
+* Pins in input : None.
+* Pins in output : Any PWM output pin can be used.
 */
 
 #pragma once
 
 #include "Timer.h"
 #include "TimerPeripherals.h"
-#include <avr/io.h>
 #include <math.h>
+#include <avr/io.h>
 
 enum class Direction {
     FORWARD,

@@ -1,3 +1,17 @@
+/* Authors: Simon Asmar, Alexandre Brassard, Maya Forest and Sébastien Girard
+* Group : 03
+* Team : 6076
+* Date : 2024-04-17
+*
+* Name of file : Display.cpp
+* Description : This file defines all functions of the Display class, allowing for 
+*               the robot to edit and print the map.
+*               This class uses the RS232 protocol to send all informations to a PC.
+* Material components used : None.
+* Pins in input : None.
+* Pins in output : None.
+*/
+
 #pragma once
 
 #include <avr/io.h>
@@ -19,7 +33,7 @@ struct Zone {
                              (uint8_t) (DOWN_RIGHT.Y - UP_LEFT.Y + 1)};
 };
 
-namespace displayConstants {
+namespace DisplayConstants {
 
     static constexpr Dimensions MAP = {(uint8_t) 101, (uint8_t) 25};
     static constexpr Dimensions BOT = {(uint8_t) 5, (uint8_t) 5};
@@ -45,7 +59,7 @@ namespace displayConstants {
 
     static const uint8_t TABLE_MAP_MEM_LOCATION = 0x0000;
 
-} // namespace displayConstants
+} 
 
 enum Lenght {
     NONE = 0,
@@ -57,8 +71,8 @@ enum Lenght {
 
 enum Vertical {
     NOWHERE = 0,
-    UP = displayConstants::LINES_ZONE.UP_LEFT.Y - 1,
-    DOWN = displayConstants::LINES_ZONE.DOWN_RIGHT.Y + 1
+    UP = DisplayConstants::LINES_ZONE.UP_LEFT.Y - 1,
+    DOWN = DisplayConstants::LINES_ZONE.DOWN_RIGHT.Y + 1
 };
 
 struct Line {

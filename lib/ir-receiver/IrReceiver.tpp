@@ -2,11 +2,11 @@
 * Group : 03
 * Team : 6076
 * Date : 2024-04-17
-
+*
 * Name of file : IrReceiver.cpp
 * Description : This header file defines all functions for the IrReceiver class
-used for receiving informations from the second robot,
-* using an infrared receiver.
+*               used for receiving informations from the second robot,
+*               using an infrared receiver.
 * Material components used : Infrared Receiver.
 * Pins in input : None.
 * Pins in output : Depends on Timer used (PWM pins), Ground PIN.
@@ -74,7 +74,7 @@ bool IrReceiver<timerNumber>::tryReceiveNextByte(uint8_t* buffer) {
     while(signalCounter <= TRANSMISSION_SIZE) {
         if(hasEdgeChanged())
             processSignal(signalCounter, rawMessageBuffer);
-        _delay_us(3);
+        _delay_us(RECEIVER_DELAY_US);
     }
     // process data if it corresponds to the address of the receiver
     if((rawMessageBuffer >> BITS_IN_BYTE) == address_) {

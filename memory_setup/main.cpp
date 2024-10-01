@@ -18,7 +18,7 @@
 #include <avr/pgmspace.h> //used to store arrays in the flash to free up limited space in sram
 #include <util/delay.h>
 
-using namespace displayConstants;
+using namespace DisplayConstants;
 // const uint8_t BINARY_INSTRUCTIONS[] PROGMEM
 // clang-format off
 

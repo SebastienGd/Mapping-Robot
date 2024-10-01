@@ -2,21 +2,23 @@
 * Group : 03
 * Team : 6076
 * Date : 2024-04-17
-
+*
 * Name of file : Display.cpp
-* Description : This file defines all functions of the Display class, allowing for the robot to edit and print the map.
-* This class uses the RS232 protocol to send all informations to a PC.
+* Description : This file defines all functions of the Display class, allowing for 
+*               the robot to edit and print the map.
+*               This class uses the RS232 protocol to send all informations to a PC.
+* Material components used : None.
+* Pins in input : None.
+* Pins in output : None.
 */
 
 #include "Display.h"
-
 #include "Communication.h"
 #include "DisplayConstants.h"
 #include "Memoire_24.h"
-
 #include <avr/io.h>
 
-using namespace displayConstants;
+using namespace DisplayConstants;
 
 Display Display::instance_;
 
@@ -24,22 +26,6 @@ Display::Display() {}
 
 Display& Display::getInstance() {
     return instance_;
-}
-
-void Display::testing() {
-    /*
-    insertBot(FARTHEST_ROBOT_ONE_INPUT, 1);
-    insertLine({Lenght::FOUR_POINT_FIVE, Vertical::UP, 25});
-    insertLine({Lenght::SIX_POINT_FIVE, Vertical::UP, 38});
-    insertLine({Lenght::SIX_POINT_FIVE, Vertical::DOWN, 39});
-    insertLine({Lenght::FOUR_POINT_FIVE, Vertical::DOWN, 27});
-    insertLine({Lenght::EIGHT_POINT_FIVE, Vertical::DOWN, 16});
-    insertLine({Lenght::EIGHT_POINT_FIVE, Vertical::DOWN, 10});
-    */
-    failSafeLines();
-    failSafeRobot();
-    displaySteve();
-    // displayNotSteve();
 }
 
 void Display::insertBot(uint8_t input, uint8_t isInverted) {
