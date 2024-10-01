@@ -15,7 +15,7 @@
 #pragma once
 
 #include "DistanceUtils.hpp"
-#include "Drivetrain.h"
+#include "DrivetrainRobotTwo.h"
 #include "Engine.h"
 #include "IrTransmitter.h"
 #include "Maker-line.h"
@@ -52,7 +52,7 @@ enum class RobotCourse {
 
 class RobotTwo {
 public:
-    RobotTwo(Drivetrain* driveTrain,
+    RobotTwo(DrivetrainRobotTwo* driveTrain,
              MakerLine* makerLine,
              Timer<DELAY_TIMER>* timer,
              Led* led,
@@ -70,7 +70,7 @@ public:
     Timer<DELAY_TIMER>* getTimer();
 
 private:
-    Drivetrain* driveTrain_;
+    DrivetrainRobotTwo* driveTrain_;
     MakerLine* makerLine_;
     Timer<DELAY_TIMER>* timer_;
 

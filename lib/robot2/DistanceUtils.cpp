@@ -2,9 +2,10 @@
 * Group : 03
 * Team : 6076
 * Date : 2024-04-17
-
+*
 * Name of file : DistanceUtils.cpp
 * Description : Diverse functions to manipulate lines and compute them, before sending them to the Display class.
+* Material components used : None.
 * Pins in input : None.
 * Pins in output : Depends on Timer used (PWM pins), Ground PIN.
 */

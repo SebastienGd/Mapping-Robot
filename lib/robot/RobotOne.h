@@ -2,12 +2,12 @@
 * Group : 03
 * Team : 6076
 * Date : 2024-04-17
-
+*
 * Name of file : RobotOne.h
 * Description : This header file defines a class for utilizing all components required to do the first robot's routine,
-* from its movement, down to receiving all the data from the second robot.
+*               from its movement, down to receiving all the data from the second robot.
 * Material components used : Piezoelectric buzzer, both engines, the robot's ADC, the robot's button, the robot's led, 
-* an infrared receiver.
+*                            an infrared receiver.
 * Pins in input : None.
 * Pins in output : Depends on Timer used (PWM pins), Ground PIN.
 */
@@ -15,7 +15,8 @@
 #pragma once
 
 #include "Button.h"
-#include "Drivetrain.h"
+#include "DrivetrainRobotOne.h"
+#include "DrivetrainRobotOne.h"
 #include "Timer.h"
 #include "Led.h"
 #include "Can.h"
@@ -36,7 +37,7 @@ enum class Mode {
 
 class RobotOne {
 public:
-    RobotOne(Timer<TimerNumber::TIMER_2>* timerPiezo, Timer<TimerNumber::TIMER_0>* engineTimer, Timer<TimerNumber::TIMER_1>* receiverTimer, MakerLine* makerLine);
+    RobotOne(Timer<TimerNumber::TIMER_2>* timerPiezo, Timer<TimerNumber::TIMER_0>* engineTimer, Timer<TimerNumber::TIMER_1>* receiverTimer);
 
     void robotModeSwitch();
     uint8_t readDistance();
@@ -56,7 +57,7 @@ private:
 
     Engine<TimerNumber::TIMER_0> rightEngine_;
     Engine<TimerNumber::TIMER_0> leftEngine_;
-    Drivetrain drivetrain_;
+    DrivetrainRobotOne drivetrain_;
 
     Led led_;
     can converter_;

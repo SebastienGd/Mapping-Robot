@@ -5,11 +5,11 @@
 *
 * Name of file : Engine.h
 * Description : This header file defines a class for utilizing any of the 3
-                available timers on the ATmega324PA microcontroller as an
-                Engine. It employs the phase-correct PWM mode and integrates
-                several methods implemented in the timer file. Additionally,
-                this class facilitates the configuration of the engine's duty
-                cycle and direction.
+*               available timers on the ATmega324PA microcontroller as an
+*               Engine. It employs the phase-correct PWM mode and integrates
+*               several methods implemented in the timer file. Additionally,
+*               this class facilitates the configuration of the engine's duty
+*               cycle and direction.
 * Material components used : Engine.
 * Pins in input : None.
 * Pins in output : Any PWM output pin can be used.

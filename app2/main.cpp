@@ -11,7 +11,7 @@
 
 #include "Debug.h"
 #include "DistanceUtils.hpp"
-#include "Drivetrain.h"
+#include "DrivetrainRobotTwo.h"
 #include "Engine.h"
 #include "Maker-line.h"
 #include "RobotTwo.h"
@@ -87,7 +87,7 @@ int main() {
     MakerLineData makerlinedata{&DDRA, &PINA, PA0, PA1, PA2, PA3, PA4};
     MakerLine makerLine(makerlinedata);
 
-    Drivetrain drivetrain(&rightEngine, &leftEngine, &makerLine);
+    DrivetrainRobotTwo drivetrain(&rightEngine, &leftEngine, &makerLine);
 
     Timer<TimerNumber::TIMER_1> timer1;
 

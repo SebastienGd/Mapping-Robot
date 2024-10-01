@@ -12,9 +12,11 @@
 * Pins in output : Depends on Timer used (PWM pins), Ground PIN.
 */
 
+#define KICKSTART_TURN_DELAY 100 
+
 #include "RobotTwo.h"
 
-RobotTwo::RobotTwo(Drivetrain* driveTrain,
+RobotTwo::RobotTwo(DrivetrainRobotTwo* driveTrain,
                    MakerLine* makerLine,
                    Timer<DELAY_TIMER>* timer,
                    Led* led,
@@ -64,8 +66,8 @@ RobotCourse RobotTwo::turnRight(uint16_t& nTurns, uint16_t& gCounter) {
     driveTrain_->stopEngines();
     _delay_ms(DELAY_MS_BEFORE_TURN);
     timerUtils::resetTimer(timer_, gCounter);
-    driveTrain_->turnRight(); 
-    driveTrain_->turnRightMakerLine();
+    driveTrain_->turnRight(KICKSTART_TURN_DELAY); 
+    // driveTrain_->turnRightMakerLine();
     if(gCounter > OVER_TURN_MARGIN_DELAY) { 
         timerUtils::resetTimer(timer_, gCounter);
         return RobotCourse::TURN180FRAME;
@@ -81,8 +83,8 @@ RobotCourse RobotTwo::turnLeft() {
     _delay_ms(FULL_STOP_DELAY_MS);
     driveTrain_->stopEngines();
     _delay_ms(DELAY_MS_BEFORE_TURN);
-    driveTrain_->turnLeft();        
-    driveTrain_->turnLeftMakerLine(); 
+    driveTrain_->turnLeft(KICKSTART_TURN_DELAY);        
+    // driveTrain_->turnLeftMakerLine(); 
     _delay_ms(FULL_STOP_DELAY_MS);
     for(uint16_t i = 1; i < (lineArrayIndex_ - 1); ++i)
         if(lineArray_[i].vertical == Vertical::UP)
@@ -98,8 +100,8 @@ RobotCourse RobotTwo::turn180(uint16_t& nTurns, uint16_t& gCounter) {
     _delay_ms(FULL_STOP_180_TURN_DELAY_MS);
     driveTrain_->stopEngines();
     _delay_ms(1100);
-    driveTrain_->turnLeft(); 
-    driveTrain_->turnLeftMakerLine();
+    driveTrain_->turnLeft(KICKSTART_TURN_DELAY); 
+    // driveTrain_->turnLeftMakerLine();
     _delay_ms(FULL_STOP_DELAY_MS);
     timerUtils::resetTimer(timer_, gCounter);
     return RobotCourse::LINE;
@@ -109,8 +111,8 @@ RobotCourse RobotTwo::turn180Frame(uint16_t& nTurns, uint16_t& gCounter) {
     canTurnLeft_ = false;
     lineArray_[lineArrayIndex_ - 1].lenght = Lenght::FOUR_POINT_FIVE;
     _delay_ms(HALF_SECOND_DELAY);
-    driveTrain_->turnLeft();
-    driveTrain_->turnLeftMakerLine();
+    driveTrain_->turnLeft(KICKSTART_TURN_DELAY);
+    // driveTrain_->turnLeftMakerLine();
     _delay_ms(FULL_STOP_DELAY_MS);
     nTurns = 1;
     timerUtils::resetTimer(timer_, gCounter);

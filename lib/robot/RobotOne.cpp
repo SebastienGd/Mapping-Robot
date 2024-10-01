@@ -5,10 +5,10 @@
 
 * Name of file : RobotOne.cpp
 * Description : This file defines all functions related to its class for
-utilizing all components required to do the first robot's routine,
-* from its movement, down to receiving all the data from the second robot.
+*               utilizing all components required to do the first robot's routine,
+*               from its movement, down to receiving all the data from the second robot.
 * Material components used : Piezoelectric buzzer, both engines, the robot's
-* ADC, the robot's button, the robot's led, an infrared receiver.
+*                            ADC, the robot's button, the robot's led, an infrared receiver.
 * Pins in input : None.
 * Pins in output : Depends on Timer used (PWM pins), Ground PIN.
 */
@@ -24,8 +24,7 @@ utilizing all components required to do the first robot's routine,
 
 RobotOne::RobotOne(Timer<TimerNumber::TIMER_2>* timerPiezo,
                    Timer<TimerNumber::TIMER_0>* engineTimer,
-                   Timer<TimerNumber::TIMER_1>* receiverTimer,
-                   MakerLine* makerLine):
+                   Timer<TimerNumber::TIMER_1>* receiverTimer):
     piezo_(timerPiezo, &PORTD, &DDRD, PD6),
     rightEngine_(engineTimer,
                  ENGINE_RIGHT_PWM_CHANNEL,
@@ -39,7 +38,7 @@ RobotOne::RobotOne(Timer<TimerNumber::TIMER_2>* timerPiezo,
                 &ENGINE_DDRX,
                 ENGINE_LEFT_DIRECTION_PIN,
                 ENGINE_LEFT_STRENGTH_INDEX_R1),
-    drivetrain_(&rightEngine_, &leftEngine_, makerLine),
+    drivetrain_(&rightEngine_, &leftEngine_),
     led_(&PORTD, &DDRD, PD4, PD5),
     converter_(),
     receiver_(*receiverTimer,
@@ -107,13 +106,11 @@ void RobotOne::runWithDistance() {
     setDistance(distance);
 
     if(distance > DEAD_CENTER) {
-        drivetrain_.kickStartEngines();
         drivetrain_.moveBackward(ENGINE_SPEED);  
         while(distance > DEAD_CENTER)
             distance = readDistance();
         setDirection(0);
     } else {
-        drivetrain_.kickStartEngines();
         drivetrain_.moveForward(ENGINE_SPEED);
         while(distance < DEAD_CENTER)
             distance = readDistance();
