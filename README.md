@@ -24,25 +24,6 @@ Removes all unnecessary files from both the library and the project.
 ./project clean
 ```
 
-## Modules
-
-### Timer
-### Piezo
-### Memory
-### Maker-Line
-### Led
-### IR-Trasnmitter
-### IR-Receiver
-### Engine
-### Display
-### Debug
-### Communication
-### Can
-### Button
-### Line
-
-
 
 ## License
-
 [MIT](https://choosealicense.com/licenses/mit/)
