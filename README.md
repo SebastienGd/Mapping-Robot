@@ -23,7 +23,3 @@ Removes all unnecessary files from both the library and the project.
 ```bash
 ./project clean
 ```
-
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
